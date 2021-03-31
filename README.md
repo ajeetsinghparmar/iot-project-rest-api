@@ -16,19 +16,14 @@
 5. Push the image to the registry using ```docker push registry.heroku.com/<heroku-app-name>/web```.
 6. Release the image ```heroku container:release -a <heroku-app-name> web```.
 7. You will be able to see the app using ```heroku open -a <heroku-app-name>```.
-8. Create a postgres addon on heroku using ```
-heroku addons:create heroku-postgresql:hobby-dev -a <heroku-app-name>
-```
+8. Create a postgres addon on heroku using ```heroku addons:create heroku-postgresql:hobby-dev -a <heroku-app-name>```.
 9. Once the database is up, run the migrations using
-```
-heroku run python manage.py makemigrations -a <heroku-app-name>
+```heroku run python manage.py makemigrations -a <heroku-app-name>```
 
-heroku run python manage.py migrate -a <heroku-app-name>
-```.
+```heroku run python manage.py migrate -a <heroku-app-name>```.
+
 10. You can check it using
-```
-heroku pg:psql -a evening-tundra-50688
-```
+```heroku pg:psql -a evening-tundra-50688```
 
 In this way you will get an up and running RESTful API using django-rest-framework and Docker and it will be hosted on Heroku.
 
